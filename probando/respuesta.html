@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felicidades! Ahora no sé qué sigue pero dale play al video</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url('img/imagen limpia.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 80%;
+            max-width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            text-align: center;
+            flex-grow: 2;
+            z-index: 1;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .gif-wrapper {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gif-wrapper.left {
+            left: -130px;
+        }
+        .gif-wrapper.right {
+            right: -130px;
+        }
+        .gif-image {
+            max-width: 150px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .video-container {
+            margin-top: 20px;
+            width: 100%;
+            padding-top: 5%;
+        }
+        iframe {
+            width: 100%;
+            height: 240px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                width: 100%;
+            }
+            .gif-wrapper {
+                display: none;
+            }
+            .card {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="gif-wrapper left">
+            <img src="https://th.bing.com/th/id/R.9dee6bd0f7d7d95c7a0002837bc1127d?rik=0gqQ1reh%2biNBOQ&pid=ImgRaw&r=0" alt="Descripción del GIF" class="gif-image">
+        </div>
+        <div class="card">
+            <h1>¡Enserio dijiste que si?, no me lo creo</h1>
+            <h2>Te dedico el siguiente video :D</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/s7vT3qUG7sI?si=AQ_qNQEWW_qoD85q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="gif-wrapper right">
+            <img src="https://th.bing.com/th/id/R.9dee6bd0f7d7d95c7a0002837bc1127d?rik=0gqQ1reh%2biNBOQ&pid=ImgRaw&r=0" alt="Descripción del GIF" class="gif-image">
+        </div>
+    </div>
+</body>
+</html>

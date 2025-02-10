@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser la piña de mi pizza?</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url('img/imagen limpia.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(0.5px);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .button.si {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button.no {
+            background-color: #f44336;
+            color: white;
+        }
+        .button.no.fixed-height {
+            height: 50px; /* Fija la altura del botón rojo */
+        }
+        .button .frase {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Nicky...¿Quieres ser la piña de mi pizza?</h1>
+        <div class="buttons">
+            <button id="buttonSi" class="button si" onclick="respuestaSi()">Sí</button>
+            <button id="buttonNo" class="button no fixed-height" onclick="respuestaNo()">
+                <span>No</span>
+                <span id="frase" class="frase"></span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        var frases = ["¿estas segura?", "¿Segura segura?", "¿Realmente segura?", "¡Oh vamos nena!"];
+        var contador = 0;
+
+        function respuestaSi() {
+            // Redirigir a otra página
+            window.location.href = 'respuesta.html';
+        }
+
+        function respuestaNo() {
+            var buttonSi = document.getElementById('buttonSi');
+            var currentSize = parseInt(window.getComputedStyle(buttonSi).fontSize);
+            buttonSi.style.fontSize = (currentSize + 2) + 'px';
+            buttonSi.style.padding = (currentSize + 10) + 'px ' + (currentSize + 20) + 'px';
+            
+            var frase = document.getElementById('frase');
+            frase.innerText = frases[contador];
+            contador = (contador + 1) % frases.length;
+        }
+    </script>
+</body>
+</html>
